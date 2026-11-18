@@ -1,0 +1,374 @@
+@use "../../styles/colors.scss" as *;
+
+footer {
+  background-color: #eaeaea;
+  color: #000;
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 85%;
+    padding: 20px 0;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: stretch;
+    line-height: 30px;
+    color: #333;
+
+    .menuFooter,
+    .contactFooter {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+
+        li {
+
+          a {
+            padding: 10px 5px;
+            font-size: 18px;
+            line-height: 18px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .contactFooter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: #242424;
+
+          a {
+    font-family: var(--overpass);
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+            line-height: 14px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    li {
+      a {
+    font-family: var(--overpass);
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #333;
+        line-height: 14px;
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+          justify-content: center;
+        }
+      }
+    }
+
+    .tituloRodape {
+      font-size: 18px;
+      font-weight: 700;
+      font-family: var(--font-manrope);
+      color: #333;
+    }
+
+    .logoFooter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+        padding: 0 0 31px 0;
+      }
+
+      img {
+        width: 170px;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      display: flex;
+      justify-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+  }
+
+  .footerSelos {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    .logoYaslip {
+      width: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+
+      a {
+        width: 100%;
+      }
+
+      object {
+        width: 100px;
+        height: 160px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+
+        img {
+          width: 130px;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 10px;
+
+      a {
+        &::before {
+          height: 0;
+        }
+      }
+    }
+  }
+
+  .bottomRowFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #565656;
+    text-align: center;
+    background-color: #eaeaea;
+    color: #333;
+    font-size: 16px;
+    font-family: var(--overpass);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 0 79px 0;
+    }
+  }
+}
+
+/* Whatsapp Button */
+
+.whatsapp-animate-circulo-pulse,
+.whatsapp-btn-bg {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.whatsapp-btn {
+  display: block;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.whatsapp-animate-circulo-pulse {
+  width: 90px;
+  height: 90px;
+  bottom: 96px;
+  right: 24px;
+  position: fixed;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 2px solid rgba(30, 30, 30, 0.4);
+  opacity: 0.1;
+  z-index: 2;
+  border-color: #43b91e;
+}
+
+.whatsapp-btn-config {
+  width: 47px;
+  height: 47px;
+  bottom: 118px;
+  right: 46px;
+  position: fixed;
+  background: url("/selos/WhatsAppButton.webp") center center no-repeat
+    rgba(30, 30, 30, 0.1);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  background-size: 100%;
+  z-index: 999999;
+}
+
+.whatsapp-btn-bg {
+  width: 60px;
+  height: 60px;
+  bottom: 111px;
+  right: 39px;
+  position: fixed;
+  -ms-transition: all 0.2s ease-in-out;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0.4 !important;
+  z-index: 999999;
+}
+
+.whatsapp-btn-bg,
+.whatsapp-btn-bg,
+.whatsapp-btn-config {
+  background-color: #43b91e;
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+@-webkit-keyframes tada {
+  from,
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+}
+
+@keyframes tada {
+  from,
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

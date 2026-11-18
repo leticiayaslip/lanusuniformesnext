@@ -1,0 +1,97 @@
+.popupIndex {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 550px;
+  max-height: 100vh;
+  height: auto;
+  padding: 35px 30px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 99;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25);
+  animation: popupEntrada 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  font-family: var(--font-manrope);
+}
+.popupIndex.popupSaida {
+  animation: popupSaida 0.35s ease-in both;
+  pointer-events: none;
+}
+.popupIndex .closed {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+.popupIndex .closed svg {
+  font-size: 1.6rem;
+  color: #000;
+  transition: 0.3s ease;
+}
+.popupIndex .closed:hover svg {
+  color: #e63946;
+  transform: rotate(90deg);
+}
+.popupIndex .infoGolpe {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #132c4a;
+}
+.popupIndex .infoGolpe .tituloPop {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #bf2b2b;
+  display: flex;
+  align-items: center;
+}
+.popupIndex .infoGolpe .tituloPop svg {
+  margin-right: 10px;
+}
+.popupIndex .infoGolpe .destaque {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.popupIndex .infoGolpe p {
+  margin: 0;
+  line-height: 1.6rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .popupIndex {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  .popupIndex .infoGolpe .tituloPop {
+    font-size: 1.2rem;
+    padding-right: 20px;
+  }
+}
+@keyframes popupEntrada {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes popupSaida {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+}
